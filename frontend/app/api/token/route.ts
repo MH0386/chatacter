@@ -1,0 +1,92 @@
+import { NextResponse } from "next/server";
+import {
+  AccessToken,
+  type AccessTokenOptions,
+  RoomConfiguration,
+  type VideoGrant,
+} from "livekit-server-sdk";
+
+type ConnectionDetails = {
+  serverUrl: string;
+  roomName: string;
+  participantName: string;
+  participantToken: string;
+};
+
+// Defaults to the self-hosted LiveKit server in dev mode from the compose files; override in `.env.local`.
+const API_KEY = process.env.LIVEKIT_API_KEY || "devkey";
+const API_SECRET = process.env.LIVEKIT_API_SECRET || "secret";
+const LIVEKIT_URL = process.env.LIVEKIT_URL || "ws://localhost:7880";
+
+// don't cache the results
+export const revalidate = 0;
+
+export async function POST(req: Request) {
+  // make an exception for the vercel preview environment
+  if (process.env.NODE_ENV !== "development" && process.env.IS_VERCEL_PREVIEW !== "true") {
+    throw new Error(
+      "THIS API ROUTE IS INSECURE. DO NOT USE THIS ROUTE IN PRODUCTION WITHOUT AN AUTHENTICATION LAYER.",
+    );
+  }
+
+  try {
+    // Parse room config from request body.
+    const body = await req.json();
+    const roomConfig = body?.room_config
+      ? RoomConfiguration.fromJson(body.room_config, { ignoreUnknownFields: true })
+      : new RoomConfiguration();
+
+    // Generate participant token
+    const participantName = "user";
+    const participantIdentity = `voice_assistant_user_${Math.floor(Math.random() * 10_000)}`;
+    const roomName = `voice_assistant_room_${Math.floor(Math.random() * 10_000)}`;
+
+    const participantToken = await createParticipantToken(
+      { identity: participantIdentity, name: participantName },
+      roomName,
+      roomConfig,
+    );
+
+    // Return connection details
+    const data: ConnectionDetails = {
+      serverUrl: LIVEKIT_URL,
+      roomName,
+      participantName,
+      participantToken,
+    };
+    const headers = new Headers({
+      "Cache-Control": "no-store",
+    });
+    return NextResponse.json(data, { headers });
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error);
+      return new NextResponse(error.message, { status: 500 });
+    }
+  }
+}
+
+function createParticipantToken(
+  userInfo: AccessTokenOptions,
+  roomName: string,
+  roomConfig: RoomConfiguration | undefined,
+): Promise<string> {
+  const at = new AccessToken(API_KEY, API_SECRET, {
+    ...userInfo,
+    ttl: "15m",
+  });
+  const grant: VideoGrant = {
+    room: roomName,
+    roomJoin: true,
+    canPublish: true,
+    canPublishData: true,
+    canSubscribe: true,
+  };
+  at.addGrant(grant);
+
+  if (roomConfig) {
+    at.roomConfig = roomConfig;
+  }
+
+  return at.toJwt();
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "aliases": {
+    "components": "@/components/agents-ui",
+    "hooks": "@/hooks/agents-ui",
+    "lib": "@/lib/shadcn",
+    "ui": "@/components/ui",
+    "utils": "@/lib/shadcn/utils"
+  },
+  "iconLibrary": "lucide",
+  "registries": {
+    "@agents-ui": "https://livekit.io/ui/r/{name}.json",
+    "@ai-elements": "https://registry.ai-sdk.dev/{name}.json"
+  },
+  "rsc": true,
+  "style": "new-york",
+  "tailwind": {
+    "baseColor": "neutral",
+    "config": "",
+    "css": "styles/globals.css",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "tsx": true
+}

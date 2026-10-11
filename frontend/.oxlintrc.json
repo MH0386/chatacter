@@ -1,0 +1,55 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "categories": {
+    "correctness": "error"
+  },
+  "env": {
+    "browser": true,
+    "builtin": true,
+    "node": true
+  },
+  "ignorePatterns": [
+    ".next/**",
+    "node_modules/**",
+    "next-env.d.ts"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "components/agents-ui/**",
+        "components/ui/**",
+        "hooks/agents-ui/**"
+      ],
+      "rules": {
+        "jsx-a11y/no-autofocus": "off",
+        "jsx-a11y/prefer-tag-over-role": "off",
+        "react/exhaustive-deps": "off",
+        "react/refs": "off",
+        "react/set-state-in-effect": "off",
+        "react/static-components": "off",
+        "typescript/no-unused-vars": "off",
+        "unicorn/no-new-array": "off",
+        "unicorn/no-useless-spread": "off"
+      }
+    }
+  ],
+  "plugins": [
+    "typescript",
+    "unicorn",
+    "oxc",
+    "react",
+    "nextjs",
+    "jsx-a11y",
+    "import"
+  ],
+  "rules": {
+    "import/default": "error",
+    "import/namespace": "error",
+    "import/no-duplicates": "error",
+    "react/exhaustive-deps": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react/rules-of-hooks": "error",
+    "typescript/no-explicit-any": "error",
+    "typescript/no-unused-vars": "error"
+  }
+}

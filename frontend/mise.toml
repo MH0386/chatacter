@@ -1,0 +1,33 @@
+[tools]
+aube = "latest"
+node = "24"
+pnpm = "latest"
+
+[tasks.dev]
+run = "pnpm dev"
+depends = ["lint", "format"]
+
+[tasks.build]
+run = "pnpm build"
+depends = ["lint", "format"]
+
+[tasks.start]
+run = "pnpm start"
+
+[tasks.lint]
+run = "pnpm lint"
+
+[tasks."lint:fix"]
+run = "pnpm lint:fix"
+
+[tasks.format]
+run = "pnpm format"
+
+[tasks."format:check"]
+run = "pnpm format:check"
+
+[tasks."shadcn:install"]
+run = "pnpm shadcn:install"
+
+[tasks.knip]
+run = "pnpm knip"
