@@ -1,10 +1,13 @@
-from logging import Logger
+from typing import TYPE_CHECKING
 
 from livekit.agents import AgentServer, cli
 
 from chatacter.core import setup_logger
 from chatacter.service import setup_service
 from chatacter.settings import Settings
+
+if TYPE_CHECKING:
+    from logging import Logger
 
 settings: Settings = Settings()
 logger: Logger = setup_logger(settings.log)

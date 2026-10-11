@@ -3,19 +3,24 @@
 from asyncio import Task, create_task, sleep
 from io import BytesIO, IOBase
 from mimetypes import guess_type
-from os import PathLike
 from pathlib import PurePath
+from typing import TYPE_CHECKING
 
 from google import genai
 from google.genai import types
 from google.genai.errors import APIError
 from livekit import rtc
-from livekit.agents import AgentSession
 from livekit.plugins.google.tools import FileSearch
 
 from chatacter.core.error import DocumentIndexingError
 from chatacter.core.logger import get_logger
-from chatacter.settings import FileSearchSettings, ModelSettings
+
+if TYPE_CHECKING:
+    from os import PathLike
+
+    from livekit.agents import AgentSession
+
+    from chatacter.settings import FileSearchSettings, ModelSettings
 
 logger = get_logger()
 

@@ -52,6 +52,6 @@ class DirectorySettings(BaseModel):
                     directory.mkdir(parents=True, exist_ok=True)
                     logger.info("Created directory %s.", directory)
                 except OSError as e:
-                    logger.error("Error creating directory %s: %s", directory, e)
+                    logger.exception("Error creating directory %s: %s", directory, e)
                     raise
         return self

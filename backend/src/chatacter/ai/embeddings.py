@@ -5,11 +5,15 @@ Gemini tunes to land close to each other. Vectors are L2-normalized because Gemi
 embeddings, and cosine search over truncated ones needs unit length.
 """
 
+from typing import TYPE_CHECKING
+
 from google import genai
 from google.genai import types
 
 from chatacter.core.logger import get_logger
-from chatacter.settings import EmbeddingsSettings
+
+if TYPE_CHECKING:
+    from chatacter.settings import EmbeddingsSettings
 
 logger = get_logger()
 

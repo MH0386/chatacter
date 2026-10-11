@@ -2,18 +2,17 @@
 
 from dataclasses import dataclass
 from textwrap import dedent
+from typing import TYPE_CHECKING
 
-from livekit.agents import (
-    NOT_GIVEN,
-    Agent,
-    ChatContext,
-    NotGivenOr,
-)
+from livekit.agents import NOT_GIVEN, Agent, ChatContext, NotGivenOr
 from livekit.agents.llm.chat_context import Instructions
-from livekit.agents.llm.tool_context import Tool
 
 from chatacter.ai.persona import Persona
-from chatacter.settings import Settings
+
+if TYPE_CHECKING:
+    from livekit.agents.llm.tool_context import Tool
+
+    from chatacter.settings import Settings
 
 
 @dataclass(frozen=True)

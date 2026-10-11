@@ -1,6 +1,10 @@
+from typing import TYPE_CHECKING
+
 from google.genai.types import Modality, ThinkingLevel
-from livekit.plugins.google.realtime import Voice
 from pydantic import BaseModel, Field, SecretStr
+
+if TYPE_CHECKING:
+    from livekit.plugins.google.realtime import Voice
 
 
 class ModelSettings(BaseModel):

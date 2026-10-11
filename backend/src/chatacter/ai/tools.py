@@ -1,7 +1,7 @@
 """Remote MCP servers that are attached only when they answer."""
 
 from asyncio import CancelledError, gather, wait_for
-from collections.abc import Sequence
+from typing import TYPE_CHECKING
 
 from livekit.agents.llm.mcp import MCPServer, MCPServerHTTP
 from mcp import ClientSession
@@ -9,6 +9,9 @@ from mcp.client.streamable_http import streamable_http_client
 
 from chatacter.core.logger import get_logger
 from chatacter.settings import ExtraMCPServerSettings, VideoGeneratorMCPServerSettings, VoiceGeneratorMCPServerSettings
+
+if TYPE_CHECKING:
+    from collections.abc import Sequence
 
 logger = get_logger()
 

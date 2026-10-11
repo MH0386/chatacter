@@ -1,10 +1,14 @@
 """Gemini Live model construction for the voice session."""
 
+from typing import TYPE_CHECKING
+
 from livekit.agents import NOT_GIVEN
 from livekit.plugins.google.realtime import RealtimeModel
 
 from chatacter.core.logger import get_logger
-from chatacter.settings import ModelSettings
+
+if TYPE_CHECKING:
+    from chatacter.settings import ModelSettings
 
 logger = get_logger()
 

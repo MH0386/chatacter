@@ -1,11 +1,13 @@
 """A module that handles the configuration of logging for the application."""
 
 from logging import WARNING, Formatter, Logger, getLogger
+from typing import TYPE_CHECKING
 
 from rich.console import Console
 from rich.logging import RichHandler
 
-from chatacter.settings import LoggerSettings
+if TYPE_CHECKING:
+    from chatacter.settings import LoggerSettings
 
 getLogger("httpx").setLevel(WARNING)
 

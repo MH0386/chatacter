@@ -2,6 +2,7 @@
 
 from asyncio import Lock
 from json import JSONDecodeError, loads
+from typing import TYPE_CHECKING
 
 from google.genai.errors import APIError
 from livekit.agents import AgentServer, AgentSession, JobContext, TurnHandlingOptions, inference
@@ -12,7 +13,9 @@ from chatacter.ai.knowledge import DocumentUploads, resolve_file_search_stores, 
 from chatacter.ai.model import setup_model
 from chatacter.ai.tools import setup_mcp_tools
 from chatacter.core.logger import get_logger
-from chatacter.settings import FileSearchSettings, Settings
+
+if TYPE_CHECKING:
+    from chatacter.settings import FileSearchSettings, Settings
 
 logger = get_logger()
 
@@ -30,8 +33,6 @@ def select_persona(metadata: str, default: Persona) -> Persona:
     """
     try:
         requested = loads(metadata).get("persona") if metadata else None
-        print(metadata)
-        print(requested)
     except JSONDecodeError, AttributeError:
         logger.warning("Ignoring dispatch metadata that is not a JSON object: %r", metadata)
         return default
@@ -81,7 +82,7 @@ def setup_service(settings: Settings) -> AgentServer:
                 try:
                     resolved_file_search = await resolve_file_search_stores(settings.file_search, settings.model)
                 except (APIError, ValueError) as error:
-                    logger.error("Starting without document search; File Search store unavailable: %s", error)
+                    logger.exception("Starting without document search; File Search store unavailable: %s", error)
                     return settings.file_search
             return resolved_file_search
 
