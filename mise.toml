@@ -1,0 +1,22 @@
+monorepo_root = true
+
+[monorepo]
+config_roots = ["frontend", "backend"]
+
+[tools]
+tombi = "latest"
+"npm:openwiki" = "latest"
+prek = "latest"
+"pipx:commitizen" = "latest"
+github-cli = "latest"
+uv = "latest"
+doppler = "latest"
+ffmpeg = "latest"
+jactionlint = "latest"
+
+[settings]
+minimum_release_age = "0d"
+
+[env]
+DOPPLER_ENV = 1
+PYTHONUTF8 = 1
