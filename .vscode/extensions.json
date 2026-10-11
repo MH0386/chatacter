@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "ms-azuretools.vscode-containers",
+    "ms-azuretools.vscode-docker",
+    "docker.docker",
+    "doppler.doppler-vscode",
+    "koltyakov.fresh-deps",
+    "davidanson.vscode-markdownlint",
+    "hverlin.mise-vscode",
+    "oxc.oxc-vscode",
+    "ms-python.python",
+    "charliermarsh.ruff",
+    "tombi-toml.tombi",
+    "astral-sh.ty",
+    "typescriptteam.native-preview",
+    "redhat.vscode-yaml"
+  ]
+}
