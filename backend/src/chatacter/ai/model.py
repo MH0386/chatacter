@@ -20,6 +20,7 @@ def setup_model(model: ModelSettings) -> RealtimeModel:
 
     Raises:
         ValueError: When the model name is missing.
+
     """
     if not model.name:
         message = "Model name is missing. Set it with `MODEL__NAME`"

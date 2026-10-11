@@ -38,13 +38,13 @@ class DirectorySettings(BaseModel):
 
     @model_validator(mode="after")
     def create_missing_dirs(self) -> Self:
-        """
-        Ensure that all specified directories exist, creating them if necessary.
+        """Ensure that all specified directories exist, creating them if necessary.
 
         Checks and creates any missing directories defined in the `DirectorySettings`.
 
         Returns:
             Self: The validated DirectorySettings instance.
+
         """
         for directory in [self.base, self.assets, self.audio, self.video, self.prompts]:
             if not directory.exists():

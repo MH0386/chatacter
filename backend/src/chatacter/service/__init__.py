@@ -26,6 +26,7 @@ def select_persona(metadata: str, default: Persona) -> Persona:
 
     Returns:
         The persona that starts the session.
+
     """
     try:
         requested = loads(metadata).get("persona") if metadata else None
@@ -49,6 +50,7 @@ def setup_service(settings: Settings) -> AgentServer:
 
     Returns:
         An agent server to run with `livekit.agents.cli.run_app`.
+
     """
     mcp_servers_settings = [
         settings.voice_generator_mcp_server,
@@ -71,6 +73,7 @@ def setup_service(settings: Settings) -> AgentServer:
 
         Returns:
             File Search settings, without store names when the store could not be resolved.
+
         """
         nonlocal resolved_file_search
         async with file_search_lock:
@@ -88,6 +91,7 @@ def setup_service(settings: Settings) -> AgentServer:
 
         Args:
             ctx: The job for the room the agent was dispatched to.
+
         """
         meta: dict[str, str] = {}
         if ctx.job.metadata:

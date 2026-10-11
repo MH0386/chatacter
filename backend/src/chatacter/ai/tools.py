@@ -25,6 +25,7 @@ async def _is_server_reachable(server: MCPServerSettings) -> bool:
 
     Returns:
         True when the official MCP client can finish the handshake.
+
     """
     try:
         async with (
@@ -50,6 +51,7 @@ async def setup_mcp_tools(mcps: Sequence[MCPServerSettings]) -> list[MCPServer]:
 
     Returns:
         One toolset per reachable server, identified by the server name.
+
     """
     if not mcps:
         logger.info("No Remote MCP servers found.")

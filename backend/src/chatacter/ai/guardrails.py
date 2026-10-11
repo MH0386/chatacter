@@ -32,6 +32,7 @@ def is_prompt_injection(prompt: str) -> bool:
 
     Returns:
         True when the prompt contains an injection phrase.
+
     """
     lowered = prompt.lower()
     return any(pattern in lowered for pattern in INJECTION_PATTERNS)

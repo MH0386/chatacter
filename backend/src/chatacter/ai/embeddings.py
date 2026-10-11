@@ -15,15 +15,18 @@ logger = get_logger()
 
 
 async def embed_contents(
-    contents: list[types.Content], embeddings_settings: EmbeddingsSettings
+    contents: list[types.Content],
+    embeddings_settings: EmbeddingsSettings,
 ) -> list[types.ContentEmbedding] | None:
     """Embed contents, such as a memory before it is stored.
 
     Args:
         contents: Contents to embed.
         embeddings_settings: Embeddings settings.
+
     Returns:
         Embeddings for the contents.
+
     """
     if not contents:
         return []

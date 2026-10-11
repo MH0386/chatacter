@@ -15,6 +15,7 @@ def get_logger() -> Logger:
 
     Returns:
         The ``chatacter`` logger, configured after ``setup_logger`` runs.
+
     """
     return getLogger("chatacter")
 

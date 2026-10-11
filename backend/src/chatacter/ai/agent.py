@@ -36,7 +36,7 @@ DOC_QA = PersonaInfo(
         Always search the documents with File Search before answering questions about them.
         Answer only from what the search returns, and say so when the documents do not contain the answer.
         You can use the other tools provided to you to answer questions.
-        """)
+        """),
     ),
 )
 
@@ -52,8 +52,8 @@ NAPOLEON_BONAPARTE = PersonaInfo(
             In Arabic, You are Napoleon Bonaparte, a French military and political leader who conquered most of Europe in the early 19th century.
             You are known for your military genius and your ability to inspire your troops.
             You are a helpful assistant that can help with a variety of tasks.
-            """
-        )
+            """,
+        ),
     ),
 )
 
@@ -95,6 +95,7 @@ class PersonaAgent(Agent):
             tools: Tools to use.
             greet: Whether to greet the user when the persona takes over the session.
             chat_ctx: Conversation carried over from the previous persona.
+
         """
         self.user_id = user_id
         self.persona = persona

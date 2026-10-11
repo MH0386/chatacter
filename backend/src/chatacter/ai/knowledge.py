@@ -36,6 +36,7 @@ def setup_file_search(file_search: FileSearchSettings) -> FileSearch | None:
 
     Returns:
         A provider tool for the Gemini Live session, or None when no store is configured.
+
     """
     if not file_search.store_names:
         logger.warning("No File Search stores configured. Set `FILE_SEARCH__STORE_NAMES` to enable document search.")
@@ -48,7 +49,8 @@ def setup_file_search(file_search: FileSearchSettings) -> FileSearch | None:
 
 
 async def resolve_file_search_stores(
-    file_search_settings: FileSearchSettings, model_settings: ModelSettings
+    file_search_settings: FileSearchSettings,
+    model_settings: ModelSettings,
 ) -> FileSearchSettings:
     """Fill in the store names, finding or creating the store named `store_display_name` when none are configured.
 
@@ -62,6 +64,7 @@ async def resolve_file_search_stores(
     Raises:
         APIError: When Gemini cannot list or create stores.
         ValueError: When Gemini returns a store without a name.
+
     """
     client = genai.Client(api_key=model_settings.api_key.get_secret_value() if model_settings.api_key else None)
     if file_search_settings.store_names:
@@ -72,7 +75,7 @@ async def resolve_file_search_stores(
             logger.info("Using File Search store %s (%s)", store.name, display_name)
             return file_search_settings.model_copy(update={"store_names": [store.name]})
     store = await client.aio.file_search_stores.create(
-        config=types.CreateFileSearchStoreConfig(display_name=display_name)
+        config=types.CreateFileSearchStoreConfig(display_name=display_name),
     )
     if not store.name:
         message = f"Gemini created the File Search store {display_name!r} without a name"
@@ -90,6 +93,7 @@ def resolve_mime_type(name: str, mime_type: str) -> str | None:
 
     Returns:
         A specific MIME type, or None when it cannot be determined.
+
     """
     if mime_type not in _GENERIC_MIME_TYPES:
         return mime_type
@@ -115,6 +119,7 @@ async def index_document(
 
     Raises:
         DocumentIndexingError: When Gemini fails to index the document.
+
     """
     operation = await client.aio.file_search_stores.upload_to_file_search_store(
         file_search_store_name=store_name,
@@ -145,9 +150,10 @@ class DocumentUploads:
 
         Raises:
             ValueError: When no File Search store is configured.
+
         """
         self._client = genai.Client(
-            api_key=model_settings.api_key.get_secret_value() if model_settings.api_key else None
+            api_key=model_settings.api_key.get_secret_value() if model_settings.api_key else None,
         )
         if not file_search.store_names:
             message = "Document uploads need a File Search store. Set `FILE_SEARCH__STORE_NAMES`."
@@ -162,6 +168,7 @@ class DocumentUploads:
         Args:
             room: Room the agent joined.
             session: Session that announces the result to the user.
+
         """
 
         def on_stream(reader: rtc.ByteStreamReader, participant_identity: str) -> None:
@@ -200,6 +207,7 @@ class DocumentUploads:
 
         Raises:
             DocumentIndexingError: When the document is larger than the limit.
+
         """
         too_large = DocumentIndexingError(f"{name} is larger than {self._max_bytes // (1024 * 1024)} MB")
         if reader.info.size and reader.info.size > self._max_bytes:
