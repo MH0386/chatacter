@@ -1,6 +1,7 @@
 [tools]
-aube = "latest"
 node = "24"
+oxfmt = "latest"
+oxlint = "latest"
 pnpm = "latest"
 
 [tasks.dev]
