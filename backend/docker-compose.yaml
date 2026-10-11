@@ -1,0 +1,21 @@
+name: chatacter
+services:
+  livekit:
+    image: livekit/livekit-server:latest
+    ports:
+      - 7880:7880
+      - 7881:7881
+      - 7882:7882/udp
+      - 8081:8081  # chatacter health check
+    # Dev mode uses the key pair devkey / secret. Media is advertised on 127.0.0.1, so browsers on this machine and
+    # the chatacter container (which shares this network namespace) can both reach it.
+    command: --dev --bind 0.0.0.0 --node-ip 127.0.0.1
+    restart: on-failure:3
+volumes:
+  logs:
+  assets:
+  fastembed:
+  checkpoint:
+  gfpgan:
+  huggingface:
+  results:

@@ -1,0 +1,11 @@
+[tools]
+"github:lukehsiao/pyproject-udeps" = "latest"
+ruff = "latest"
+ty = "latest"
+
+[[watch_files]]
+patterns = ["src/**/*.py"]
+run = "uv format"
+
+[tasks.start]
+run = "uv run chatacter dev"

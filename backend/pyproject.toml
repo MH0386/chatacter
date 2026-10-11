@@ -1,0 +1,40 @@
+[project]
+name = "chatacter"
+version = "0.0.1"
+description = "App part of the Chatacter Backend"
+readme = "README.md"
+requires-python = ">=3.14, <3.15"
+authors = [
+  { name = "Mohamed Hisham Abdelzaher", email = "mohamed.hisham.abdelzaher@gmail.com" },
+]
+scripts = { chatacter = "chatacter.__main__:main" }
+dependencies = [
+  "livekit-agents[google,mcp]~=1.8.6",
+  "pydantic-extra-types>=2.11.1",
+]
+
+[dependency-groups]
+dev = [
+  "doppler-env>=0.3.1",
+  "pre-commit>=4.5.1",
+  "pytest-emoji>=0.2.0",
+  "pytest-md>=0.2.0",
+  "pytest-mergify>=2026.10.5",
+  "uv-build>=0.13.0",
+]
+
+[build-system]
+requires = ["uv_build"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["ALL"]
+
+[tool.vulture]
+make_whitelist = true
+min_confidence = 80
+sort_by_size = true
+exclude = [".venv"]
