@@ -293,7 +293,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "livekit-agents", extras = ["google", "mcp"], specifier = "~=1.8.6" },
+    { name = "livekit-agents", extras = ["google", "mcp"], specifier = "~=1.8.11" },
     { name = "pydantic-extra-types", specifier = ">=2.11.1" },
 ]
 
