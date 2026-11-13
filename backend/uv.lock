@@ -303,7 +303,7 @@ dev = [
     { name = "pre-commit", specifier = ">=4.7.0" },
     { name = "pytest-emoji", specifier = ">=0.2.0" },
     { name = "pytest-md", specifier = ">=0.2.0" },
-    { name = "pytest-mergify", specifier = ">=2026.10.5" },
+    { name = "pytest-mergify", specifier = ">=2026.11.8" },
     { name = "uv-build", specifier = ">=0.13.8" },
 ]
 
@@ -1557,7 +1557,7 @@ wheels = [
 
 [[package]]
 name = "pytest-mergify"
-version = "2026.10.5"
+version = "2026.11.8"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pluggy" },
@@ -1565,13 +1565,13 @@ dependencies = [
     { name = "pytest-timeout" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/41/49/02dfd54a42a3897f17eae13ace983be23f6fb8b1088237d0a29f2ded8a2a/pytest_mergify-2026.10.5-cp38-abi3-macosx_10_12_x86_64.whl", hash = "sha256:764412f7180c89645cc03a29377bf812ff2cef05f16390ae1d53e64194d5ffb1", size = 3183598, upload-time = "2026-10-09T13:11:23.194Z" },
-    { url = "https://files.pythonhosted.org/packages/f3/d6/594c4b2b7845d3ffc1ff4c9d359a8bc1050931bb68308b61b84b04b153e6/pytest_mergify-2026.10.5-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:d78d2490f37447505cfcc4e008103df4f3dea780da42b5b508832d50a09d9e1d", size = 2996221, upload-time = "2026-10-09T13:11:25.427Z" },
-    { url = "https://files.pythonhosted.org/packages/9f/ed/18de6d521ba090cb96a4e40a61ba3272af663bc6fd8a9da81159261f3010/pytest_mergify-2026.10.5-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:dfaa87e1acb3c059fe748bb20182b38ce5e35845d4081b2fdc4ce2c458c121e6", size = 3081757, upload-time = "2026-10-09T13:11:27.325Z" },
-    { url = "https://files.pythonhosted.org/packages/e4/22/9be94d8d9bb994f62a6d2c97fb1e842f313b896263999b7f3f53251f53c3/pytest_mergify-2026.10.5-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a334f352141fd5693607d494990149d601c6c000ee033c4ad7fe25afaed8a706", size = 3289447, upload-time = "2026-10-09T13:11:29.499Z" },
-    { url = "https://files.pythonhosted.org/packages/11/52/c2af7c262ad7f232a33514c42170684e245a3ad8d006b160067372b130cf/pytest_mergify-2026.10.5-cp38-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:c2f0c061daf230dd8e978684661000eb7728c133e6e89eea6843792f9188f254", size = 3262917, upload-time = "2026-10-09T13:11:31.527Z" },
-    { url = "https://files.pythonhosted.org/packages/eb/36/b1c24ac4d657a138b49d34c37d116919adfecc1e686f9046138c6b9a5b7b/pytest_mergify-2026.10.5-cp38-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:63c569cfef41ad1cc5d32a6e11c6bffc03a6bd0925cb3a3c0c61cae0116e911c", size = 3534819, upload-time = "2026-10-09T13:11:33.715Z" },
-    { url = "https://files.pythonhosted.org/packages/b8/f4/13dbce01c0639c7f39863804f32d6633cb1595b411fb28d2e6434eada8e0/pytest_mergify-2026.10.5-cp38-abi3-win_amd64.whl", hash = "sha256:1c685af9a28c72046785b9c2c852034e37876ffbf1da622a19c69cef7ac37c2a", size = 3003909, upload-time = "2026-10-09T13:11:35.787Z" },
+    { url = "https://files.pythonhosted.org/packages/af/68/e4d8bdef8149c233dc4245a1159eb26ead6e4f757c111851a11762ee18ec/pytest_mergify-2026.11.8-cp310-abi3-macosx_10_12_x86_64.whl", hash = "sha256:b0866d2d8c93f9798cced9e3d9383d8363aca9b32cc55a54a19cf01b4de45861", size = 4111379, upload-time = "2026-11-13T09:26:02.748Z" },
+    { url = "https://files.pythonhosted.org/packages/1a/96/193b584d28d197dc02971551bd9fa42e3b3868ef6ffb1ef185f43d61039e/pytest_mergify-2026.11.8-cp310-abi3-macosx_11_0_arm64.whl", hash = "sha256:f437c2ec27371ffa69d86abbd1d3b2e098ad95fcba6edfe28425b4de13f6b0fb", size = 3864245, upload-time = "2026-11-13T09:26:04.78Z" },
+    { url = "https://files.pythonhosted.org/packages/a8/a7/f17d89ae786ec915c16daa15b6d661fadf26905efeb6cb12b96eac6e1929/pytest_mergify-2026.11.8-cp310-abi3-manylinux_2_28_aarch64.whl", hash = "sha256:d67aa49f65b9809208f7be6eb221a6ca6a084508b4dae4b5dde2970b5edd1ea4", size = 4061838, upload-time = "2026-11-13T09:26:06.506Z" },
+    { url = "https://files.pythonhosted.org/packages/d0/57/e11527fc117ff4c0752ab16ad72164c43b163a3969414d5de363ec6d9bde/pytest_mergify-2026.11.8-cp310-abi3-manylinux_2_28_x86_64.whl", hash = "sha256:4784c041184666ef52f0133c732661f8dd61e4ea307b4809dabe31c54e3f5c9c", size = 4297099, upload-time = "2026-11-13T09:26:08.415Z" },
+    { url = "https://files.pythonhosted.org/packages/8c/6e/bdea5d7ffe16b871a3b7e5d9097f9b1a90d2003a2ff1b780796891b8147c/pytest_mergify-2026.11.8-cp310-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:d73c15c96fe74404480497ab5aabb72acf7be15eadd453c7c89dc78cb002b4b5", size = 4071311, upload-time = "2026-11-13T09:26:10.456Z" },
+    { url = "https://files.pythonhosted.org/packages/00/86/9c08e7ced82466c69f6e699c12d8ddd25aa7560deb1d699510589ca5ec1c/pytest_mergify-2026.11.8-cp310-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:f8a001c11103f7c5c19749a57eb62f4258427dd3ab15144f666b1b1c178ae606", size = 4305613, upload-time = "2026-11-13T09:26:12.221Z" },
+    { url = "https://files.pythonhosted.org/packages/1f/f7/55ce8a0a0c8b28a7b1ec7e516cd122e9667c4aa73be4566ccf13277f67d7/pytest_mergify-2026.11.8-cp310-abi3-win_amd64.whl", hash = "sha256:e57300bca5578e15f24ec09dbacf7f28cb8240ea38f67fbf12f10ab2a1233896", size = 3896369, upload-time = "2026-11-13T09:26:14.092Z" },
 ]
 
 [[package]]
