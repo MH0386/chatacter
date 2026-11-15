@@ -237,7 +237,7 @@ importers:
         specifier: ^0.78.0
         version: 0.78.0
       oxlint:
-        specifier: ^1.87.0
+        specifier: ^1.92.0
         version: 1.92.0
       tailwindcss:
         specifier: ^4
