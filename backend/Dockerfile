@@ -1,4 +1,4 @@
-FROM cgr.dev/chainguard/wolfi-base:latest@sha256:833c48f1faf32c90e6f9501a2410a9aa28ceb2c594102edd4470053c30efa089 AS builder
+FROM cgr.dev/chainguard/wolfi-base:latest@sha256:2c12da5496e21e99003b3db3b9246f025e53d533c4df334205391260f1e8f85b AS builder
 
 ARG INSTALL_SOURCE
 ARG PYTHON_VERSION
@@ -11,7 +11,7 @@ USER nonroot
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv tool install ${INSTALL_SOURCE} --python ${PYTHON_VERSION}
 
-FROM cgr.dev/chainguard/wolfi-base:latest@sha256:833c48f1faf32c90e6f9501a2410a9aa28ceb2c594102edd4470053c30efa089 AS production
+FROM cgr.dev/chainguard/wolfi-base:latest@sha256:2c12da5496e21e99003b3db3b9246f025e53d533c4df334205391260f1e8f85b AS production
 
 ENV FASTEMBED_CACHE_PATH=/home/nonroot/fastembed \
     PATH=/home/nonroot/.local/bin:$PATH
