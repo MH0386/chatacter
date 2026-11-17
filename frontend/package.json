@@ -34,7 +34,7 @@
     "node": "24.x"
   },
   "name": "chatacter",
-  "packageManager": "pnpm@12.20.0",
+  "packageManager": "pnpm@12.21.0",
   "private": true,
   "scripts": {
     "build": "next build",
