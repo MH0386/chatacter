@@ -20,7 +20,7 @@ dev = [
   "pytest-emoji>=0.2.0",
   "pytest-md>=0.2.0",
   "pytest-mergify>=2026.11.14",
-  "uv-build>=0.13.8",
+  "uv-build>=0.13.9",
 ]
 
 [build-system]
