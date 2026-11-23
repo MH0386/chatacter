@@ -3,7 +3,7 @@ name = "chatacter"
 version = "0.0.1"
 description = "App part of the Chatacter Backend"
 readme = "README.md"
-requires-python = ">=3.14, <3.15"
+requires-python = ">=3.15.2, <3.16"
 authors = [
   { name = "Mohamed Hisham Abdelzaher", email = "mohamed.hisham.abdelzaher@gmail.com" },
 ]
