@@ -195,7 +195,7 @@ importers:
         version: 2.24.1(@types/dom-mediacapture-record@1.0.22)
       livekit-server-sdk:
         specifier: ^2.18.0
-        version: 2.20.0
+        version: 2.20.1
       lucide-react:
         specifier: 1.53.0
         version: 1.53.0(@types/react@19.3.0)(react@19.3.1)
@@ -633,6 +633,9 @@ packages:
 
   '@livekit/protocol@1.53.0':
     resolution: {integrity: sha512-dM562Q7sEQbJ9ZghjIpcVuRxRApGNwJW/JfXRub+dJT8J1cC2Tep0SyYkDzOawix7+0x969fnjXt0qEZOxkjbQ==}
+
+  '@livekit/protocol@1.54.1':
+    resolution: {integrity: sha512-eW6iAeKQdljAD4aDmANnV2SE0iQ06Atw2F1F4kIiy4lXaD5bNTlfAnH27B+ZKgu49Nrnn172JnRQ3WxXVBhlBQ==}
 
   '@modelcontextprotocol/core@2.4.0':
     resolution: {integrity: sha512-z8QBKqdfXLPzkLQuG4xp8hrVEMm1PZ1IgxMN2sMbJiFiAKOWXnAzogXn2W4aqIBlP1ea6U5yiqVquvUNM1Cj6Q==}
@@ -2800,8 +2803,8 @@ packages:
     peerDependencies:
       '@types/dom-mediacapture-record': ^1
 
-  livekit-server-sdk@2.20.0:
-    resolution: {integrity: sha512-kkzvWp50q8oPGhJp7gpgGSPx2riQAzTZQXOBKz7ze58Be+dzdArneTbXM9ATZ5BdRFFvN+sxGEfGYyXAczLFig==}
+  livekit-server-sdk@2.20.1:
+    resolution: {integrity: sha512-41/6Piz6emgjco9+kXbiu98qsuoOKbCE4tUZMcBan0r1b5phoCiuLYoanLDAd74Cd0i6GNaUn6KLb8hR1lDhCw==}
     engines: {node: '>=19'}
 
   locate-path@3.0.0:
@@ -4067,6 +4070,10 @@ snapshots:
   '@livekit/mutex@1.1.1': {}
 
   '@livekit/protocol@1.53.0':
+    dependencies:
+      '@bufbuild/protobuf': 1.10.1
+
+  '@livekit/protocol@1.54.1':
     dependencies:
       '@bufbuild/protobuf': 1.10.1
 
@@ -5899,10 +5906,10 @@ snapshots:
       typed-emitter: 2.1.0
       webrtc-adapter: 9.0.6
 
-  livekit-server-sdk@2.20.0:
+  livekit-server-sdk@2.20.1:
     dependencies:
       '@bufbuild/protobuf': 1.10.1
-      '@livekit/protocol': 1.53.0
+      '@livekit/protocol': 1.54.1
       jose: 5.10.0
 
   locate-path@3.0.0:
