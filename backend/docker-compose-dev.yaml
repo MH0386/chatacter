@@ -1,7 +1,7 @@
 name: chatacter Dev
 services:
   livekit:
-    image: livekit/livekit-server:latest
+    image: livekit/livekit-server:latest@sha256:25cd902de7cacbd5f1f779f6a6ac1eae20ba8f56b0935934ce6b0ab80d1e3d20
     command: --dev --bind 0.0.0.0 --node-ip 127.0.0.1
     ports:
       - 7880:7880
