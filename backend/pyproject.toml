@@ -19,7 +19,7 @@ dev = [
   "pre-commit>=4.7.0",
   "pytest-emoji>=0.2.0",
   "pytest-md>=0.2.0",
-  "pytest-mergify>=2026.11.19",
+  "pytest-mergify>=2026.11.26",
   "uv-build>=0.13.10",
 ]
 
